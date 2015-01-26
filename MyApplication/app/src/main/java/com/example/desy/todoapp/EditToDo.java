@@ -28,6 +28,5 @@ public class EditToDo extends ActionBarActivity {
         data.putExtra("itemList", editText);
         setResult(RESULT_OK, data);
         finish();
-
     }
 }

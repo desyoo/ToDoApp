@@ -8,5 +8,6 @@
     <string name="add_button_label">Add</string>
     <string name="edit_message">Edit item below</string>
     <string name="edit_save">Save</string>
+    <string name="title_activity_sqlite">SQLite</string>
 
 </resources>

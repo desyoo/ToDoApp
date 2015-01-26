@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
 public class ToDoActivity extends ActionBarActivity {
     ArrayList<String> items;
     ArrayAdapter<String> itemsAdapter;
@@ -26,19 +25,37 @@ public class ToDoActivity extends ActionBarActivity {
     EditText etNewItem;
     int pos;
     private final int REQUEST_CODE = 20;
+    SQLite db = new SQLite(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do);
+
         lvItems = (ListView) findViewById(R.id.lvItems);
         etNewItem = (EditText) findViewById(R.id.etNewItem);
         items = new ArrayList<String>();
         readItems();
+
         itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
+
+//        db.addTodoItem(new TodoItem("Get milk", 3));
+//        db.addTodoItem(new TodoItem("Pickup kids", 1));
+//
+//        List<TodoItem> items = db.getAllTodoItems();
+//        // Print out properties
+//        for (TodoItem ti : items) {
+//            String log = "Id: " + ti.getId() + " , Body: " + ti.getBody() +
+//                    " , Priority: " + ti.getPriority();
+//
+//            // Writing Todo Items to log
+//            Log.d("Name: ", log);
+//        }
+
         setupListViewListener();
         setupListViewClickListener();
+
     }
 
     private void setupListViewClickListener() {
@@ -52,7 +69,6 @@ public class ToDoActivity extends ActionBarActivity {
                         i.putExtra("itemList",items.get(position));
                         items.remove(pos);
                         startActivityForResult(i, REQUEST_CODE);
-                        startActivity(i);
                     }
                 }
         );
@@ -123,6 +139,8 @@ public class ToDoActivity extends ActionBarActivity {
         String itemText = etNewItem.getText().toString();
         itemsAdapter.add(itemText);
         etNewItem.setText("");
+
+
         writeItems();
     }
 
