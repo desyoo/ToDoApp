@@ -1,4 +1,4 @@
-package com.example.desy.simpletodo;
+package com.example.desy.todoapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
