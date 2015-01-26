@@ -5,10 +5,10 @@ Android demo of adding List items and able to add, edit or delete them.
 
 Features:
 
-Displaying a custom dialog with layout content
-Displaying a custom dialog with alert builder
-Displaying a popup menu to show secondary actions
-Displaying a popup window for a tooltip
-Enabling contextual action modes for list items
+Displaying a custom ArrayList with the todo items;
+Displaying a correct add a new item functionality;
+Able to delete the items;
+Able to edit the items;
 
 Screens:
+I tried using LICEcap and uploading it here but it doesn't work. I will try to figure this out and submit it again.
